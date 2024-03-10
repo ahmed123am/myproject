@@ -1,0 +1,665 @@
+/* start global rules  */
+:root{
+    --main-color:#1BAB78;
+    --main-color-hover:#3CDB7D;
+    --color-black:#171717;
+    --color-gray:#D9D9D9;
+    --color-white:#FFFFFF;
+    --main-transition:0.3s;
+    --main-padding:100px;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+a{
+    color:var(--color-black);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    letter-spacing: 1px;
+}
+body{
+    font-family: 'Cairo', sans-serif;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.contanier{
+    padding: 0 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* small */
+@media (min-width:768px){
+    .contanier{
+        width:750px;
+    } 
+}
+/* medium */
+@media (min-width:992px){
+    .contanier{
+        width:970px;
+    }  
+}
+/* large */
+@media (min-width:1200px){
+    .contanier{
+        width:1170px;
+    }
+}
+/* end global rules  */
+/* start header  */
+header{
+    position: fixed;
+    background-color: var(--color-black);
+    width: 230px;
+    height: 100vh;
+    padding-bottom:50px;
+    overflow: hidden;
+    transition: var(--main-transition);
+    box-shadow: 0 12px 30px rgba(80,143,244,.1); 
+    
+}
+header .nav{
+    position: relative;
+    padding: 20px ;
+}
+header .nav .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-color);
+    margin:5px auto;
+    font-size: 36px;
+    font-weight: bolder;
+    letter-spacing: 10px;
+    transition: var(--main-transition);
+}
+header .nav .logo:hover{
+    color: var(--main-color-hover);
+}
+header .nav .info{
+    position: relative;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+header .nav .info .image img {
+    margin: 20px auto;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 4px solid var(--main-color);
+
+}
+header .nav .info .id{
+    margin-top:-30px;
+    text-align: center;
+}
+header .nav .info .id h2{
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+    color: var(--color-white);
+}
+header .nav .info .id p{
+    font-size: 15px;
+    color: var(--color-white);
+    border-bottom: 1px solid var(--main-color);
+}
+header .nav .menu{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 40px 0;
+}
+header .nav .menu>li {
+    margin-left: 0;
+    margin-right: 20px;
+    
+}
+header .nav .menu>li .active::after{
+    content: "\f0d7";
+    font-family:"Font Awesome 6 Free";
+    color: var(--main-color);
+    font-weight: 900;
+    font-size: 18px;
+    display: flex;
+    position: absolute;
+    left: 150px;
+}
+header .nav .menu>li a{
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: var(--main-color);
+    width: 150px;
+    margin-bottom: 25px;
+
+}
+header .nav .menu>li a i{
+    font-size: 15px;
+}
+
+header .nav .menu>li a p {
+    color: var(--color-white);
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-left: 7px;
+    
+}
+header .nav .menu>li .alt{
+    padding: 5px auto;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    display: none;
+}
+.show{
+    display: block;
+}
+header .nav .menu>li .alt a i{
+    font-size: 13px;
+    margin-left: 10px;
+}
+header .nav .menu>li .alt a p{
+    font-size: 13px;
+    font-weight: 400;
+}
+header .nav .logout{
+    position: relative;
+    display: flex;
+    margin-top: 25px;
+}
+header .nav .logout a{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 17px;
+    color: var(--main-color);
+}
+header .nav .logout a i{
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 5px;
+    transform: rotateY(180deg);
+}
+header .nav .logout a p{
+    color: var(--color-white);
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+/* end header  */
+/* start section  */
+.section{
+    position: relative;
+    width:calc(100% - 230px);
+    padding: 10px ;
+    left:230px;
+    margin-right: 30px;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+.section .head{
+    color: var(--main-color);
+    font-size:20px;
+    font-weight:900;
+    letter-spacing: 3px;
+    border-bottom: 1px solid var(--color-gray);
+    width: fit-content;
+}
+.section .contanier{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    flex-direction: column;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+.section .contanier .box{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 80px 30px 15px;
+    width: 93%;
+    height: 350px;
+    background-color: #eceae4;
+    border-radius: 20px;
+}
+
+.section .contanier .box .image img{
+    display: block;
+    width:210px;
+    height:270px;
+    margin: 0 20px 40px 20px;
+    border-radius: 15px;
+}
+.section .contanier .box  .title{
+    height: 270px;
+    background-color: var(--color-white);
+    margin-bottom: 40px;
+    margin-right: 25px;
+    border-radius: 15px;
+    overflow-y: auto;
+}
+.section .contanier .box  .title p{
+    font-size:17px;
+    font-weight: 650;
+    letter-spacing: 1px;
+    padding: 20px;
+}
+.section .contanier .box .bottons{
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    flex-direction: column;
+    margin-right: 20px;
+    margin-top: -40px;
+
+}
+.section .contanier .box .bottons .botton{
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+.section .contanier .box .bottons i{
+    color: var(--color-white);
+    font-size: 15px;
+    font-weight: bold;
+    margin:0 5px ;
+    transition: var(--main-transition);
+    transition-timing-function: ease-in-out;
+
+}
+.section .contanier .box .bottons button{
+    background-color: var(--main-color);
+    color: var(--color-white);
+    font-size: 16px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    width: 100px;
+    height: 40px;
+    border: 1px solid var(--main-color);
+    border-radius: 25px;
+    transition: var(--main-transition);
+    transition-timing-function: ease-in-out;
+    cursor: pointer;
+}
+.section .contanier .box .bottons button:hover{
+    background-color: var(--color-white);
+    border: 1px solid transparent;
+    color:var(--main-color);
+}
+.section .contanier .box .bottons button:hover i{
+    color: var(--main-color);
+}
+.section .contanier .box .info{
+    position: absolute;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    left: 50px;
+    bottom: 10px;
+    width: 100%;
+}
+.section .contanier .box .info div{
+    position: absolute;
+    font-size: 17px;
+    font-weight: 650;
+    letter-spacing: 1px;
+    color: var(--color-black);
+    bottom: 5px;
+    
+}
+.section .contanier .box .info .places{
+    margin-right: 800px;
+    width: 300px;
+
+}
+.section .contanier .box .info .rates{ 
+    right: 0; 
+    width: 250px;
+
+}
+.section .contanier .box .info span{
+    transition: var(--main-transition) ease-in-out;
+}
+.section .contanier .box .info span:hover{
+    color:var(--main-color)
+}
+.section .contanier .box .info div i{
+    color: var(--main-color);
+
+}
+.section .contanier .box .info span.special::after{
+    position: absolute;
+    content: "";
+    width: 2px;
+    height: 35px;
+    background-color: var(--main-color);
+}
+.section .contanier .country,.add{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1000px;
+    height: 70px;
+    margin: 10px 0;
+    border: 3px solid var(--main-color);
+    border-radius: 30px;
+    margin-right:7pc;
+}
+.section .contanier .country p,.add p{
+    font-size: 18px;
+    font-weight: bolder;
+    letter-spacing: 3px;
+    margin-left: 15px;
+    color: var(--color-black);
+}
+.section .contanier .country .icon{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--main-color);
+    background-color: var(--main-color);
+    margin-right: 15px;
+    transition: var(--main-transition) ease-in-out;
+
+}
+.section .contanier .country .icon:hover{
+    background-color: var(--color-white);
+    i{
+    color: var(--main-color);
+    }
+}
+.section .contanier .country .icon i{
+    position: absolute;
+    color: var(--color-white);
+    font-size: 25px;
+    font-weight:900;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: var(--main-transition) ease-in-out;
+}
+.section .contanier .add p{
+    font-style: italic;
+    opacity: 50%;
+}
+.section .contanier .add a{
+    padding:5px 20px;
+    background-color: var(--main-color);
+    text-align: center;
+    margin-right: 20px;
+    border-radius: 30px;
+    color: var(--color-white);
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    border:1px solid var(--main-color);
+    transition: var(--main-transition) ease-in-out;
+}
+.section .contanier .add a i{
+    margin-left: 5px;
+}
+.section .contanier .add a:hover{
+    background-color: var(--color-white);
+    color: var(--main-color);
+}
+.section .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.section .header button{
+    background-color: var(--main-color);
+    color: var(--color-white);
+    border: 1px solid var(--main-color);
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 650;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: var(--main-transition) ease-in-out;
+}
+.section .header button:hover{
+    background-color: var(--color-white);
+    color: var(--main-color);
+}
+.section .contanier .menu{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 25px;
+    margin-right: 150px;
+}
+.section .contanier .menu .main,.child{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    width: 85%;
+    gap: 20px;
+}
+.section .contanier .menu  input,.main a,.one{
+    position: relative;
+    padding: 5px 10px;
+    font-size: 18px;
+    border: 2px solid var(--main-color);
+    letter-spacing: 2px;
+    border-radius: 15px;
+    height: 45px;
+    font-weight: 650;
+    color: var(--color-black);
+    width: 100%;
+}
+.section .contanier .menu  input:focus{
+    outline: none;
+}  
+.section .contanier .menu .main a,.one a{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}   
+.section .contanier .menu .main a i,.one a i{
+    font-size: 24px;
+    font-weight: bolder;
+    color: var(--main-color);
+}
+.section .contanier .menu .child .one a{
+    font-weight: 650;
+    letter-spacing: 2px;
+}
+.section .contanier .images{
+    margin-top: 20px;
+    width: 100%;
+}
+.section .contanier .images .para{
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 650;
+    color: var(--color-black);
+}
+.section .contanier .images .boxs{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: 85%;
+    margin-top: 10px;
+}
+.section .contanier .images .boxs .main{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    background-color: #eceae4;
+    border-radius: 15px;
+    flex-basis:50%;
+    height: 45vh;
+    margin-left: 20px;
+}
+.section .contanier .images .boxs .main p{
+    font-size: 22px;
+    margin-top: 10px;
+}
+.section .contanier .images .boxs .other p{
+    font-size: 18px;
+}
+.section .contanier .images .boxs .main p,.other p{
+    font-weight: 650;
+    letter-spacing: 3px;
+}
+.section .contanier .images .boxs .main i{
+    color: var(--main-color);
+    font-size: 110px;
+}
+.section .contanier .images .boxs .main input,.other input{
+    display: none;
+}
+.section .contanier .images .boxs .main label{
+    background-color: var(--main-color);
+    color: var(--color-white);
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 5px 20px;
+    border: 1px solid var(--main-color);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: var(--main-transition) ease-in-out;
+}
+.section .contanier .images .boxs .main label:hover{
+    background-color: var(--color-white);
+    color: var(--main-color);
+}
+.section .contanier .images .boxs .parent{
+    flex-basis:50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 10px;
+}
+.section .contanier .images .boxs .parent .other{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border: 2px solid var(--main-color);
+    margin-bottom: 20px;
+    border-radius: 15px;
+    padding: 5px 15px;
+}
+.section .contanier .images .boxs .parent label{
+    background-color: var(--main-color);
+    color: var(--color-white);
+    border-radius: 15px;
+    border: 1px solid var(--main-color);
+    padding: 3px 8px;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: var(--main-transition) ease-in-out;
+}
+.section .contanier .images .boxs .parent label:hover{
+    background-color: var(--color-white);
+    color: var(--main-color);
+}
+.section .contanier .infor {
+    margin-top: 60px;
+    width: 100%;
+    position: relative;
+}
+.section .contanier .infor textarea{
+    border: 2px solid var(--main-color);
+    border-radius: 15px;
+    width: 85%;
+    padding: 10px ;
+    height: 20vh;
+    margin-left: 20px;
+}
+.section .contanier .infor textarea::placeholder{
+    font-size: 16px;
+    letter-spacing: 2px;
+    font-weight: 650;
+    font-style: italic;
+
+}
+.section .contanier .infor textarea:focus{
+    outline: none;
+    font-size: 16px;
+    font-weight: 650;
+}
+.section .contanier .infor span{
+    position: absolute;
+    color: var(--main-color);
+    bottom: 10px;
+    left: 82%;
+}
+.section .contanier table{
+    position: relative;
+    width: 95%;
+    overflow: hidden;
+    border-radius: 10px;
+    border-collapse: collapse;
+    margin-right: 50px;
+}
+.section .contanier table thead{
+    background-color: #eceae4;
+    color: var(--main-color);
+    height: 50px;
+}
+.section .contanier table thead tr th{
+    font-weight: bolder;
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+.section .contanier table tbody tr{
+    height: 45px;
+}
+.section .contanier table tbody tr td{
+    text-align: center;
+    font-size: 18px;
+    line-height: 3;
+    margin-bottom: 30px;
+    transition: var(--main-transition) ease-in-out;
+}
+.section .contanier table tbody tr td:hover{
+    color: var(--main-color);
+}
+.section .contanier table .left{
+    text-align: left;
+}
+
+
+
+
+
+
+
+
+/* end section  */
+
+

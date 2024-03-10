@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="myproject.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Tour | Showing You The World</title>
+</head>
+<body>
+    <!-- start header -->
+    <header>
+        <div class="nav">
+            <a class="logo" href="#">TOUR</a>
+            <div class="info">
+                <div class="image">
+                    <img src="./hazem.jpg" alt="image">
+                </div>
+                <div class="id">
+                    <h2>Hazem Badr</h2>
+                    <p>Front-End Developer</p>
+                </div>
+            </div>
+            <ul class="menu">
+                <li><a  href="myproject.HTML">
+                        <i class="fa-solid fa-border-all"></i>
+                        <p>Dashboard</p>
+                    </a>
+                    <span class="more"></span>
+                    <ul class="alt hide">
+                        <li><a class="active" href="Add Section.Html">
+                                <i class="fa-solid fa-circle-plus"></i>
+                                <p>Add Section</p>
+                            </a>
+                        </li>
+                        <li><a href="Add Country.Html">
+                            <i class="fa-solid fa-circle-plus"></i>
+                            <p>Add Country</p>
+                        </a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="Booking.Html">
+                        <i class="fa-solid fa-map-location"></i>
+                        <p>Booking</p>
+                    </a>
+                </li>
+                <li><a href="Contact.Html">
+                        <i class="fa-solid fa-comments"></i>
+                        <p>Contact Us</p>
+                    </a>
+                </li>
+            </ul>
+            <div class="logout">
+                <a href="#">
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                    <p>Log Out</p>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- end header -->
+    <!-- start section -->
+    <div class="section">
+        <div class="header">
+            <h2 class="head">ADD SECTION</h2>
+            <button id="add" type="button">SAVE</button>
+        </div>
+        <div class="contanier">
+            <div class="menu">
+                <div class="main">
+                    <input id="f1" type="text" placeholder="Title">
+                    <div class="views">
+                        <span id="f2">Select Country</span>
+                        <i class="view fa-solid fa-caret-down"></i>
+                    </div>
+                    <div class="selected"></div>
+                </div>
+                <div class="child">
+                    <input id="f3" class="one" type="number" placeholder="Add Price">
+                    <input id="f4" class="one" type="number" placeholder="Days">
+                    <input id="f5" class="one" type="text" placeholder="Section">
+                    <input id="f6" class="one" type="text" placeholder="Rates">
+                </div>
+            </div>
+            <div class="images">
+                <p class="para">Add 5 Images</p>
+                <div  class="boxs">
+                    <div class="main">
+                        <p>Main Image</p>
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <input id="img1" type="file" id="fileinput" accept="image/*,video/*" name="fileinput">
+                        <label for="fileinput">Browser</label>
+                    </div>
+                    <div class="parent">
+                    <div class="other">
+                        <p>Image-2</p>
+                        <input type="file" id="fileinput" name="fileinput">
+                        <label for="fileinput">Browser</label>
+                    </div>
+                    <div class="other">
+                        <p>Image-3</p>
+                        <input type="file" id="fileinput" name="fileinput">
+                        <label for="fileinput">Browser</label>
+                    </div>
+                    <div class="other">
+                        <p>Image-4</p>
+                        <input type="file" id="fileinput" name="fileinput">
+                        <label for="fileinput">Browser</label>
+                    </div>
+                    <div class="other">
+                        <p>Image-5</p>
+                        <input type="file" id="fileinput" name="fileinput">
+                        <label for="fileinput">Browser</label>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div id="displayImage"></div>
+            <div class="infor">
+                <textarea class="area" placeholder="Details!" maxlength="600" rows="4"></textarea>
+                <span class="counter">0/600</span>
+            </div>
+        </div>
+    </div>
+    <!-- end section -->
+    <script src="myproject.js"></script>
+    <script src="add section.js"></script>
+
+</body>
+</html>
