@@ -362,6 +362,7 @@ header .nav .logout a p{
 }
 .section .contanier .box .info span.special{
     margin-right: 10px;
+    padding: 5px;
 }
 .section .contanier .box .info span.special::after{
     position: absolute;
@@ -494,6 +495,7 @@ header .nav .logout a p{
     width: 85%;
     gap: 20px;
 }
+
 .section .contanier .menu .main input,.views,.one{
     position: relative;
     padding: 5px 10px;
@@ -515,7 +517,7 @@ header .nav .logout a p{
 .section .contanier .menu .main input:focus{
     outline: none;
 }  
-.section .contanier .menu .main .views i,.one i{
+.section .contanier .menu .main .views i,.one i,.view{
     font-size: 24px;
     font-weight: bolder;
     color: var(--main-color);
@@ -541,13 +543,45 @@ header .nav .logout a p{
     overflow: auto;
     gap: 10px;
     top: 45px;
-    z-index: 1;
+    z-index: 3;
     display: none;
+    scrollbar-width:none;
 }
+.section .contanier .menu .child .selected2{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 18%;
+    height: 145px;
+    right: 354px;
+    padding: 10px 20px;
+    background-color: var(--color-white);
+    border: 3px solid var(--main-color);
+    border-radius: 10px;
+    overflow: auto;
+    gap: 10px;
+    top: 129px;
+    z-index: 2;
+    scrollbar-width:none;
+    display: none;
+
+}
+.section .contanier .menu .child .one input{
+    font-weight: bolder;
+    border: none;
+}
+.section .contanier .menu .child .one input:focus{
+    outline: none;
+}
+
 .section .contanier .menu .main .hideList{
-    display: flex
+    display: flex;
 }
-.section .contanier .menu .main .selected span{
+.section .contanier .menu .child .hideList{
+    display: flex;
+
+}
+.section .contanier .menu .main .selected span,.selected2 span {
     border:1px solid var(--main-color);
     border-radius: 10px;
     width: 100%;
@@ -588,7 +622,38 @@ header .nav .logout a p{
     flex-basis:50%;
     height: 45vh;
     margin-left: 20px;
+    position: relative;
 }
+.section .contanier .images .display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px 0;
+    margin-top: 15px;
+}
+.section .contanier .images .display div{
+    width: 25%;
+    height: 200px;
+}
+.section .contanier .images .display div img{
+    width: 95%;
+    height: 95%;
+    border-radius: 10px;
+    display: none;
+}
+
+.section .contanier .images .boxs .main .profile1{
+    width: 95%;
+    height: 95%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 5;
+    border-radius: 10px;
+    display: none;
+}
+
 .section .contanier .images .boxs .main p{
     font-size: 22px;
     margin-top: 10px;
@@ -618,6 +683,7 @@ header .nav .logout a p{
     border-radius: 15px;
     cursor: pointer;
     transition: var(--main-transition) ease-in-out;
+    z-index: 6;
 }
 .section .contanier .images .boxs .main label:hover{
     background-color: var(--color-white);
@@ -658,7 +724,7 @@ header .nav .logout a p{
     color: var(--main-color);
 }
 .section .contanier .infor {
-    margin-top: 60px;
+    margin-top: 20px;
     width: 100%;
     position: relative;
 }

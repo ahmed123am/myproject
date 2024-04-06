@@ -249,9 +249,10 @@ header .drop_menu ul li .signup:hover{
     position: relative;
     top: -65px;
     z-index: 1;
+    min-height: 100vh;
 }
 .landing .box{
-    /* position: absolute; */
+    position: absolute;
     left: 0;
     right: 0;
     top: 0;
@@ -312,7 +313,7 @@ header .drop_menu ul li .signup:hover{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    bottom: 10px;
+    top: 710px;
     left: 50%;
     transform: translate(-50%,-50%);
 }

@@ -81,45 +81,73 @@
                     <div class="selected"></div>
                 </div>
                 <div class="child">
-                    <input id="f3" class="one" type="number" placeholder="Add Price">
-                    <input id="f4" class="one" type="number" placeholder="Days">
-                    <input id="f5" class="one" type="text" placeholder="Section">
-                    <input id="f6" class="one" type="text" placeholder="Rates">
+                    <input id="f3" class="one inputR" type="text" onkeyup="numbersOnly(this)" placeholder="Add Price">
+                    <input id="f4" class="one inputR" type="text" onkeyup="numbersOnly(this)" placeholder="Days">
+                    <div class="one">
+                        <span id="f5">Section</span>
+                        <i class="view2 fa-solid fa-caret-down"></i>
+                    </div>
+                    <div class="selected2">
+                        <span>Tours</span>
+                        <span>Hotels</span>
+                        <span>Events</span>
+                    </div>
+                    <div class="one">
+                        <i class="fa-regular fa-clock"></i>
+                        <label for="f6">DATE</label>
+                        <input type="date" id="f6" >
+                    </div>
                 </div>
             </div>
             <div class="images">
                 <p class="para">Add 5 Images</p>
                 <div  class="boxs">
                     <div class="main">
+                        <img src="" class="profile1" alt="">
                         <p>Main Image</p>
                         <i class="fa-solid fa-cloud-arrow-up"></i>
-                        <input id="img1" type="file" id="fileinput" accept="image/*,video/*" name="fileinput">
-                        <label for="fileinput">Browser</label>
+                        <input type="file" id="fileinput1" accept="image/*,video/*" name="fileinput">
+                        <label class="lab1" for="fileinput1">Browser</label>
                     </div>
                     <div class="parent">
                     <div class="other">
                         <p>Image-2</p>
-                        <input type="file" id="fileinput" name="fileinput">
-                        <label for="fileinput">Browser</label>
+                        <input type="file" id="fileinput2" name="fileinput">
+                        <label class="lab2" for="fileinput2">Browser</label>
                     </div>
                     <div class="other">
                         <p>Image-3</p>
-                        <input type="file" id="fileinput" name="fileinput">
-                        <label for="fileinput">Browser</label>
+                        <input type="file" id="fileinput3" name="fileinput">
+                        <label class="lab3" for="fileinput3">Browser</label>
                     </div>
                     <div class="other">
                         <p>Image-4</p>
-                        <input type="file" id="fileinput" name="fileinput">
-                        <label for="fileinput">Browser</label>
+                        <input type="file" id="fileinput4" name="fileinput">
+                        <label class="lab4" for="fileinput4">Browser</label>
                     </div>
                     <div class="other">
                         <p>Image-5</p>
-                        <input type="file" id="fileinput" name="fileinput">
-                        <label for="fileinput">Browser</label>
+                        <input type="file" id="fileinput5" name="fileinput">
+                        <label class="lab5" for="fileinput5">Browser</label>
                     </div>
                 </div>
             </div>
+            <div class="display">
+                <div>
+                    <img src="" class="profile2" alt="">
+                </div>
+                <div>
+                    <img src="" class="profile3" alt="">
+                </div>
+                <div>
+                    <img src="" class="profile4" alt="">
+                </div>
+                <div>
+                    <img src="" class="profile5" alt="">
+                </div>
             </div>
+            </div>
+
             <div id="displayImage"></div>
             <div class="infor">
                 <textarea class="area" placeholder="Details!" maxlength="600" rows="4"></textarea>

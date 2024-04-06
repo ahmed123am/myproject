@@ -64,14 +64,14 @@ prev.onclick = function(){
     active = active - 1 >= 0 ? active - 1 : lengthItems;
     reloadSlider();
 }
-let refreshInterval = setInterval(()=> {next.click()}, 1000);
+let refreshInterval = setInterval(()=> {next.click()}, 5000);
 function reloadSlider(){
     slider.style.left = -items[active].offsetLeft + 'px';
     let last_active_dot = document.querySelector('.landing .circle span.active');
     last_active_dot.classList.remove('active');
     dots[active].classList.add('active');
     clearInterval(refreshInterval);
-    refreshInterval = setInterval(()=> {next.click()}, 1000);
+    refreshInterval = setInterval(()=> {next.click()}, 5000);
 }
 dots.forEach((li, key) => {
     li.addEventListener('click', ()=>{

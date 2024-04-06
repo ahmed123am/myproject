@@ -16,6 +16,7 @@ let alt=document.querySelector(".alt");
 
 more.onclick=function(){
     alt.classList.toggle("hide");
+    
 }
 ///////////
 if(window.localStorage.getItem('obj')){
@@ -29,7 +30,7 @@ for(let i=0;i<object.title.length;i++){
         let image = document.createElement('div');
         image.className="image";
         let img = document.createElement('img');
-        img.src=object.images[i];
+        img.src=(object.images[i]);
 
         let title = document.createElement('div');
         title.className="title";
@@ -86,7 +87,7 @@ for(let i=0;i<object.title.length;i++){
 
         let span4=document.createElement('span');
         span4.className="special";
-        span4.innerHTML=object.rates[i];
+        span4.innerHTML=object.dates[i];
 
         let span5=document.createElement('span');
         span5.className="special";
@@ -94,8 +95,6 @@ for(let i=0;i<object.title.length;i++){
 
         let span6=document.createElement('span');
         span6.innerHTML=`$${object.price[i]}Night`;
-
-
 
 
         places.append(span1);
@@ -133,41 +132,15 @@ for(let i=0;i<object.title.length;i++){
 
         document.querySelector('#aaa').append(box);
 
-        
+
+
+       
+    }
 }
-
-let box=Array.from(document.querySelectorAll('.box'));
-box.forEach((i)=>{
-    let del=document.querySelector('.delete');
-        del.addEventListener('click', (e) => {
-            console.log('aaaa');
-        object.title = object.title.filter((element) => element !== `${e.currentTarget.previousElementSibling.innerHTML}`);
-        window.localStorage.setItem('obj', JSON.stringify(object.title));
-
-        object.country = object.country.filter((element) => element !== `${e.currentTarget.previousElementSibling.innerHTML}`);
-        window.localStorage.setItem('obj', JSON.stringify(object.country));
-
-        object.price = object.price.filter((element) => element !== `${e.currentTarget.previousElementSibling.innerHTML}`);
-        window.localStorage.setItem('obj', JSON.stringify(object.price));
-
-        object.days = object.days.filter((element) => element !== `${e.currentTarget.previousElementSibling.innerHTML}`);
-        window.localStorage.setItem('obj', JSON.stringify(object.days));
-
-        object.sections = object.sections.filter((element) => element !== `${e.currentTarget.previousElementSibling.innerHTML}`);
-        window.localStorage.setItem('obj', JSON.stringify(object.sections));
-
-        object.rates = object.rates.filter((element) => element !== `${e.currentTarget.previousElementSibling.innerHTML}`);
-        window.localStorage.setItem('obj', JSON.stringify(object.rates));
-
-        object.images = object.images.filter((element) => element !== `${e.currentTarget.previousElementSibling.innerHTML}`);
-        window.localStorage.setItem('obj', JSON.stringify(object.images));
-
-        object.details = object.details.filter((element) => element !== `${e.currentTarget.previousElementSibling.innerHTML}`);
-        window.localStorage.setItem('obj', JSON.stringify(object.details));
-
-        e.currentTarget.parentElement.parentElement.remove();
+let del=document.querySelectorAll('.delete');
+del.forEach((i)=>{
+    i.addEventListener('click', (e) => {
+        let parent =e.currentTarget.parentElement.parentElement;
+        parent.remove();
 });
 });
-}
-
-

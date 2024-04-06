@@ -3,9 +3,7 @@ let selected =document.querySelector(".selected");
 let inputCountry =document.querySelector(".views span");
 let span=document.querySelector(".selected span");
 
-view.onclick=function(){
-    selected.classList.toggle("hideList");
-};
+display(view,selected);
 
 if(window.localStorage.getItem('tasks')){
 let task0=JSON.parse(window.localStorage.tasks);
@@ -16,28 +14,99 @@ task0.forEach((e)=>{
     selected.append(span);
     span.onclick=function(){
         let inp=document.querySelector('.views span');
-        console.log(inp.innerHTML);
         inp.innerHTML=span.innerHTML;
         selected.classList.toggle("hideList");
     }
 });
 }
+/*-----------------------------*/
+let view2 =document.querySelector(".view2");
+let selected2 =document.querySelector(".selected2");
 
 
 
-const image_input=document.querySelector('#img1');
-var uploaded_image="";
-image_input.addEventListener("change",function(){
-    const reader = new FileReader();
-    reader.addEventListener("load",()=>{
-        uploaded_image=reader.result;
-        document.querySelector('#displayImage').style.backgroundImage=`url(${uploaded_image})`;
+let innerSection=document.getElementById('f5');
+
+let span2=document.querySelectorAll(".selected2 span");
+
+display(view2,selected2);
+
+select(span2,innerSection,selected2);
+
+function display(v,s){
+    v.onclick=function(){
+        s.classList.toggle("hideList");
+    };
+}
+
+function select(span,inner,s){
+    span.forEach((e)=>{
+        e.onclick=function(){
+            inner.innerHTML=e.innerHTML;
+            s.classList.toggle("hideList");
+        }
     });
-    reader.readAsDataURL(this.files[0]);
-    console.log("hhh");
-})
+}
+
+/*-----------------------------*/
+let inputR=document.querySelector(".inputR");
+
+function lettersOnly(inputR){
+    let regex=/[^a-z]/g;
+    inputR.value = inputR.value.replace(regex,"");
+}
+function numbersOnly(inputR){
+    let regex=/[^0-9]/gi;
+    inputR.value = inputR.value.replace(regex,"");
+}
+function numbersOnlyRang(inputR){
+    let regex=/[^0-5]/gi;
+    inputR.value = inputR.value.replace(regex,"");
+}
+
+/*-----------------------------*/
 
 
+let profile1=document.querySelector('.profile1');
+let profile2=document.querySelector('.profile2');
+let profile3=document.querySelector('.profile3');
+let profile4=document.querySelector('.profile4');
+let profile5=document.querySelector('.profile5');
+
+
+let inputFile1=document.getElementById('fileinput1');
+let inputFile2=document.getElementById('fileinput2');
+let inputFile3=document.getElementById('fileinput3');
+let inputFile4=document.getElementById('fileinput4');
+let inputFile5=document.getElementById('fileinput5');
+
+let label1=document.querySelector('.lab1');
+let label2=document.querySelector('.lab2');
+let label3=document.querySelector('.lab3');
+let label4=document.querySelector('.lab4');
+let label5=document.querySelector('.lab5');
+
+
+displayImage(inputFile1,profile1,label1);
+displayImage(inputFile2,profile2,label2);
+displayImage(inputFile3,profile3,label3);
+displayImage(inputFile4,profile4,label4);
+displayImage(inputFile5,profile5,label5);
+
+
+
+function displayImage(inputFile,ima,label){
+    
+    inputFile.onchange=function(){
+        ima.style.display="block";
+        label.style.backgroundColor="transparent";
+        ima.src=URL.createObjectURL(inputFile.files[0]);
+    }
+}
+
+
+
+/*-----------------------------*/
 
 let area=document.querySelector(".area");
 let attr=area.getAttribute("maxlength");
@@ -50,6 +119,8 @@ area.oninput=function(){
     
 }
 
+/*-----------------------------*/
+
 
 
 let btn=document.querySelector("#add");
@@ -60,7 +131,6 @@ let f3=document.querySelector("#f3");
 let f4=document.querySelector("#f4");
 let f5=document.querySelector("#f5");
 let f6=document.querySelector("#f6");
-let image1=document.querySelector("#img1");
 let des=document.querySelector(".area");
 
 let obj={
@@ -69,9 +139,13 @@ let obj={
     price:[],
     days:[],
     sections:[],
-    rates:[],
+    dates:[],
     images:[],
     details:[]
+}
+
+if(window.localStorage.getItem('obj')){
+    obj= JSON.parse(window.localStorage.obj);
 }
 btn.onclick=function(){
     
@@ -79,14 +153,14 @@ btn.onclick=function(){
     obj.country = obj.country.concat(f2.innerHTML);
     obj.price = obj.price.concat(f3.value);
     obj.days = obj.days.concat(f4.value);
-    obj.sections = obj.sections.concat(f5.value);
-    obj.rates = obj.rates.concat(f6.value);
-    obj.images = obj.images.concat(image1.src);
+    obj.sections = obj.sections.concat(f5.innerHTML);
+    obj.dates = obj.dates.concat(f6.value);
+    obj.images = obj.images.concat(profile1.src);
     obj.details = obj.details.concat(des.value);
 
     window.localStorage.setItem('obj', JSON.stringify(obj));
+    location.reload();
 }
-
 
 
 
